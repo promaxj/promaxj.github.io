@@ -21,7 +21,7 @@
   <meta name="description" content="什麼是機器學習呢？ 讓機器具備找一個函式的能力。 例如:  【輸入是一段聲音，輸出是這段聲音的文字】的這一個函式，這個函式顯然非常複雜，沒有辦法使用人類手寫的方式找尋出來，而我們期待機器自動地將此函式找出來。 【輸入是一張圖片，輸出是描述這張圖片的內容】 讓機器下圍棋，【輸入是一張圍棋的現況，輸出是圍棋的下一步】  機器學習的類別  1. Regression: the function outp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="機器學習基本概念簡介_李弘毅_ML2021#1">
-<meta property="og:url" content="https://promaxj.github.io/2021/11/07/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%B0%A1%E4%BB%8B-%E6%9D%8E%E5%BC%98%E6%AF%85-ML2021-1/index.html">
+<meta property="og:url" content="https://promaxj.github.io/2021/11/07/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%B0%A1%E4%BB%8B-%E6%9D%8E%E5%BC%98%E6%AF%85-ML2021-1/index.html">
 <meta property="og:site_name" content="一張地圖">
 <meta property="og:description" content="什麼是機器學習呢？ 讓機器具備找一個函式的能力。 例如:  【輸入是一段聲音，輸出是這段聲音的文字】的這一個函式，這個函式顯然非常複雜，沒有辦法使用人類手寫的方式找尋出來，而我們期待機器自動地將此函式找出來。 【輸入是一張圖片，輸出是描述這張圖片的內容】 讓機器下圍棋，【輸入是一張圍棋的現況，輸出是圍棋的下一步】  機器學習的類別  1. Regression: the function outp">
 <meta property="og:locale" content="en_US">
@@ -29,106 +29,64 @@
 <meta property="og:image" content="https://miro.medium.com/max/1226/0*bAmBN9JTB8mS0c_W.png">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*QRO4uerAryyu5I8MtCfOzQ.png">
 <meta property="og:image" content="https://miro.medium.com/max/464/1*6DlnRk7qqPmx9FopOdDllw.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*aDH49OKi1w_QrGZCEzayGQ.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/316/1*aDH49OKi1w_QrGZCEzayGQ.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*-jfY9qGtAVPvKAKbfYpfCA.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/868/1*-jfY9qGtAVPvKAKbfYpfCA.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*PTogaOZswNhPUlApGX7LVA.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*PTogaOZswNhPUlApGX7LVA.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*MojrNc0gQCVTgIGxA9s6Vg.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/884/1*MojrNc0gQCVTgIGxA9s6Vg.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*EQmWa3mitxx_eJup_No0hw.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/524/1*EQmWa3mitxx_eJup_No0hw.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*tbLNAqYccsn7nphOB8R-rQ.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*tbLNAqYccsn7nphOB8R-rQ.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*AMjsBW8X8TSJp67slwOU0Q.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/752/1*AMjsBW8X8TSJp67slwOU0Q.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*ueRoRHx98Uz-1qkTM2MyVA.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/752/1*ueRoRHx98Uz-1qkTM2MyVA.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*RRPtTXM-ECPzhhAt-2xJ9g.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/748/1*RRPtTXM-ECPzhhAt-2xJ9g.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*H55UrbtkfGi1jr6h8Y7hmA.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/976/1*H55UrbtkfGi1jr6h8Y7hmA.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*mkvJ9sL904OROvBOIF-h9A.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*mkvJ9sL904OROvBOIF-h9A.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*QotY1eL-a4wM4Junxjs9nQ.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*QotY1eL-a4wM4Junxjs9nQ.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*4SWpfI74TOd286xRfYiD3Q.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*4SWpfI74TOd286xRfYiD3Q.png">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*rnUBpfdH_w-5UJN_kTxLhA.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*-wBE8v3eilqwR3bwZpqmpQ.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*-wBE8v3eilqwR3bwZpqmpQ.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*BNkxLT-HXbTTtW3C9sOO1g.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*BNkxLT-HXbTTtW3C9sOO1g.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*L-qVYtZGUsbQjprBdDdYqA.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*L-qVYtZGUsbQjprBdDdYqA.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*iVdadzh3jt7T6lQP3JtApQ.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*iVdadzh3jt7T6lQP3JtApQ.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*7N1t6VKdVqQHzjfv6J6J7A.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*7N1t6VKdVqQHzjfv6J6J7A.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/0*6YX6c062sRJHXUmQ.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/0*6YX6c062sRJHXUmQ.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*4j01KDXI1E46aOvS1kzEfA.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*4j01KDXI1E46aOvS1kzEfA.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*60WNxHxux4qIhamh6r_0tA.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*60WNxHxux4qIhamh6r_0tA.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*1Kx04jkNC0b2zIoY0CJWsQ.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*1Kx04jkNC0b2zIoY0CJWsQ.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*D55FvLQozT9vGRxdPgAJRA.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*D55FvLQozT9vGRxdPgAJRA.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*5kjZ9BgQunYREUbmMSMiNQ.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*5kjZ9BgQunYREUbmMSMiNQ.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*pyHa-sTlt3mywNEirTa_6Q.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*pyHa-sTlt3mywNEirTa_6Q.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*eWwqyhGsbjGwci-a1BGMbw.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/712/1*eWwqyhGsbjGwci-a1BGMbw.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*CEut5H24owChbV5qcFYV9A.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*CEut5H24owChbV5qcFYV9A.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*uqVuf6JOvVsZGjRPXd5ySA.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1100/1*uqVuf6JOvVsZGjRPXd5ySA.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*ojtIWkKbomL5175Q-UpDYA.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*ojtIWkKbomL5175Q-UpDYA.png">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*d68KcDB4F_MXBfgFos3kpw.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*sqlCAKmx-W4DqHE4qbcfPQ.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*sqlCAKmx-W4DqHE4qbcfPQ.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*a0zzCR5PHDGdobl1vpajCw.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*a0zzCR5PHDGdobl1vpajCw.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*GUSK_9UPJBoa4007kEwQsQ.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*GUSK_9UPJBoa4007kEwQsQ.png">
 <meta property="og:image" content="https://miro.medium.com/max/60/1*U68Uh5IymBc5dq0MFViHuQ.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*U68Uh5IymBc5dq0MFViHuQ.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*SJ__7imfD2pXRsfYZK2VwA.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/752/1*SJ__7imfD2pXRsfYZK2VwA.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*nCPuUSQ0PKgtVgKxokBVEA.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/716/1*nCPuUSQ0PKgtVgKxokBVEA.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*iMX4q8V4BJ0O0UImavhzyw.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/680/1*iMX4q8V4BJ0O0UImavhzyw.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*hDtVpfaLurbgZvCw_wnJ2A.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*hDtVpfaLurbgZvCw_wnJ2A.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*IiG8MwHuPoEDSlqx65gATA.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*IiG8MwHuPoEDSlqx65gATA.png">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*uDwFpc_XvJq0kOOFrriWxQ.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*I6nhiZVC9c6ov9sURxl55A.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*I6nhiZVC9c6ov9sURxl55A.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*Y11V1mUw2ydgGKFxRkLIpw.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*Y11V1mUw2ydgGKFxRkLIpw.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*x8RRUzJDs0rhcTpeyRPAQg.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*x8RRUzJDs0rhcTpeyRPAQg.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*15fimLFw59DWkj6yoTXJQw.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*15fimLFw59DWkj6yoTXJQw.png">
-<meta property="og:image" content="https://miro.medium.com/max/60/1*Cqb9iLtOlVuBJHT7uCWn5Q.png?q=20">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*Cqb9iLtOlVuBJHT7uCWn5Q.png">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*X4jbTuR7QFedvQG8llCMDw.png">
 <meta property="og:image" content="https://miro.medium.com/max/1340/1*MNWWewUZJ29NOp4OijIixQ.png">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*19jAQaLVdAtHmttXVL5L7w.png">
 <meta property="og:image" content="https://miro.medium.com/max/1400/1*uc0Y4IGbOC8_Xjsam4uieA.png">
 <meta property="article:published_time" content="2021-11-07T04:49:21.000Z">
-<meta property="article:modified_time" content="2021-11-07T05:13:11.838Z">
+<meta property="article:modified_time" content="2021-11-07T06:55:50.961Z">
 <meta property="article:author" content="Zelig">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://miro.medium.com/max/1202/0*QVR04FZJV4Vzt0du.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://promaxj.github.io/2021/11/07/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%B0%A1%E4%BB%8B-%E6%9D%8E%E5%BC%98%E6%AF%85-ML2021-1/index.html">
+  <link rel="canonical" href="https://promaxj.github.io/2021/11/07/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%B0%A1%E4%BB%8B-%E6%9D%8E%E5%BC%98%E6%AF%85-ML2021-1/index.html">
   
     <link rel="alternate" href="/atom.xml" title="一張地圖" type="application/atom+xml">
   
@@ -144,11 +102,7 @@
   
   
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
@@ -253,14 +207,14 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">Catalogue</h3>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E5%91%A2"><span class="toc-number">1.</span> <span class="toc-text">什麼是機器學習呢？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E7%9A%84%E9%A1%9E%E5%88%A5"><span class="toc-number">2.</span> <span class="toc-text">機器學習的類別</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E5%A6%82%E4%BD%95%E5%8E%BB%E5%B0%8B%E6%89%BE%E4%B8%80%E5%80%8B%E5%87%BD%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">機器學習如何去尋找一個函式？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%99%E6%98%AF%E6%9C%80%E5%A5%BD%E7%9A%84%E8%A8%88%E7%AE%97%E6%96%B9%E5%BC%8F%E5%97%8E%E6%88%96%E5%8F%AA%E6%98%AF%E8%87%AA%E5%97%A8"><span class="toc-number"></span> <span class="toc-text">這是最好的計算方式嗎？或只是自嗨？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%8F%8F%E7%B9%AA%E4%B8%8A%E8%BF%B0%E7%9A%84-blue-line-%E5%91%A2"><span class="toc-number">1.</span> <span class="toc-text">如何描繪上述的 blue line 呢？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8F%BE%E5%9C%A8%E5%86%8D%E9%87%8D%E6%96%B0%E8%AA%AA%E6%98%8E%E4%B8%80%E6%AC%A1%E5%A6%82%E4%BD%95%E5%B0%8B%E6%89%BE-funciton"><span class="toc-number">2.</span> <span class="toc-text">現在再重新說明一次如何尋找 funciton</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E4%B8%8D%E5%8F%AF%E4%BB%A5%E4%B8%8D%E8%A6%81%E7%94%A8-sigmoid-%E4%BD%BF%E7%94%A8-hard-sigmoid-%E5%81%9A%E5%8F%96%E4%BB%A3"><span class="toc-number">3.</span> <span class="toc-text">可不可以不要用 sigmoid ，使用 hard sigmoid 做取代？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%BA%E5%B0%91%E4%B8%80%E5%80%8B-fancy-name"><span class="toc-number">4.</span> <span class="toc-text">缺少一個 fancy name?!</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E5%91%A2"><span class="toc-number">1.</span> <span class="toc-text">什麼是機器學習呢？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E7%9A%84%E9%A1%9E%E5%88%A5"><span class="toc-number">2.</span> <span class="toc-text">機器學習的類別</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E5%A6%82%E4%BD%95%E5%8E%BB%E5%B0%8B%E6%89%BE%E4%B8%80%E5%80%8B%E5%87%BD%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">機器學習如何去尋找一個函式？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%99%E6%98%AF%E6%9C%80%E5%A5%BD%E7%9A%84%E8%A8%88%E7%AE%97%E6%96%B9%E5%BC%8F%E5%97%8E%E6%88%96%E5%8F%AA%E6%98%AF%E8%87%AA%E5%97%A8"><span class="toc-number"></span> <span class="toc-text">這是最好的計算方式嗎？或只是自嗨？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%8F%8F%E7%B9%AA%E4%B8%8A%E8%BF%B0%E7%9A%84-blue-line-%E5%91%A2"><span class="toc-number">1.</span> <span class="toc-text">如何描繪上述的 blue line 呢？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8F%BE%E5%9C%A8%E5%86%8D%E9%87%8D%E6%96%B0%E8%AA%AA%E6%98%8E%E4%B8%80%E6%AC%A1%E5%A6%82%E4%BD%95%E5%B0%8B%E6%89%BE-funciton"><span class="toc-number">2.</span> <span class="toc-text">現在再重新說明一次如何尋找 funciton</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hyperparameters-%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-number">3.</span> <span class="toc-text">hyperparameters 有哪些？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E4%B8%8D%E5%8F%AF%E4%BB%A5%E4%B8%8D%E8%A6%81%E7%94%A8-sigmoid-%E4%BD%BF%E7%94%A8-hard-sigmoid-%E5%81%9A%E5%8F%96%E4%BB%A3"><span class="toc-number">4.</span> <span class="toc-text">可不可以不要用 sigmoid ，使用 hard sigmoid 做取代？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%BA%E5%B0%91%E4%B8%80%E5%80%8B-fancy-name"><span class="toc-number">5.</span> <span class="toc-text">缺少一個 fancy name?</span></a></li></ol>
     </nav>
   </div>
 </aside>
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-機器學習基本概念簡介-李弘毅-ML2021-1" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-深度學習基本概念簡介-李弘毅-ML2021-1" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
@@ -275,7 +229,7 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2021/11/07/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%B0%A1%E4%BB%8B-%E6%9D%8E%E5%BC%98%E6%AF%85-ML2021-1/" class="article-date">
+	<a href="/2021/11/07/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%B0%A1%E4%BB%8B-%E6%9D%8E%E5%BC%98%E6%AF%85-ML2021-1/" class="article-date">
 	  <time datetime="2021-11-07T04:49:21.000Z" itemprop="datePublished">2021-11-07</time>
 	</a>
 </span>
@@ -289,14 +243,14 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/11/07/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%B0%A1%E4%BB%8B-%E6%9D%8E%E5%BC%98%E6%AF%85-ML2021-1/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/11/07/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%B0%A1%E4%BB%8B-%E6%9D%8E%E5%BC%98%E6%AF%85-ML2021-1/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="什麼是機器學習呢"><strong>什麼是機器學習呢？</strong></h2>
-<p><strong>讓機器具備找一個函式的能力。</strong></p>
+        <h2 id="什麼是機器學習呢">什麼是機器學習呢？</h2>
+<p>讓機器具備找一個函式的能力。</p>
 <p>例如:</p>
 <ul>
 <li>【輸入是一段聲音，輸出是這段聲音的文字】的這一個函式，這個函式顯然非常複雜，沒有辦法使用人類手寫的方式找尋出來，而我們期待機器自動地將此函式找出來。</li>
@@ -329,7 +283,6 @@
 <p>也就是去猜測這個未知參數應該長什麼樣子</p>
 <p>例如：</p>
 <p><span class="math display">\[y = b + wx_1\]</span></p>
-<p><span class="math inline">\(y = b + wx_1\)</span></p>
 <figure>
 <img src="https://miro.medium.com/max/464/1*6DlnRk7qqPmx9FopOdDllw.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
@@ -342,24 +295,19 @@
 <p><strong>step2: define loss from training data</strong></p>
 <p>一個 function，輸入是剛剛定義的 model 的 unknown parameter，輸出是將 unknown parameter 帶入此 function 後，這筆數值是好或不好，此稱為 loss function。</p>
 <p>例如：</p>
-<figure>
-<img src="https://miro.medium.com/max/60/1*aDH49OKi1w_QrGZCEzayGQ.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><span class="math display">\[L(b, w)\]</span></p>
 <figure>
 <img src="https://miro.medium.com/max/316/1*aDH49OKi1w_QrGZCEzayGQ.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p>這樣說可能有點抽象，所以假設 b=0.5k; w = 0.1</p>
-<figure>
-<img src="https://miro.medium.com/max/60/1*-jfY9qGtAVPvKAKbfYpfCA.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><span class="math display">\[L(b, w)\]</span></p>
+<p><span class="math display">\[b= o.5k, w=0.1\]</span></p>
+<p><span class="math display">\[y=0.5k+0.1x_1\]</span></p>
 <figure>
 <img src="https://miro.medium.com/max/868/1*-jfY9qGtAVPvKAKbfYpfCA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p>b=0.5k; w = 0.1，這樣所代表的函式有多少呢？就是 training data</p>
 <p>例如此 training data 就是過往的觀看次數</p>
-<figure>
-<img src="https://miro.medium.com/max/60/1*PTogaOZswNhPUlApGX7LVA.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
 <figure>
 <img src="https://miro.medium.com/max/1400/1*PTogaOZswNhPUlApGX7LVA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
@@ -373,29 +321,17 @@
 </ul>
 <p>因為 L 是自己定義的，也可能為負數，但上述舉例不可能為負。</p>
 <figure>
-<img src="https://miro.medium.com/max/60/1*MojrNc0gQCVTgIGxA9s6Vg.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
 <img src="https://miro.medium.com/max/884/1*MojrNc0gQCVTgIGxA9s6Vg.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
-<img src="https://miro.medium.com/max/60/1*EQmWa3mitxx_eJup_No0hw.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <figure>
 <img src="https://miro.medium.com/max/524/1*EQmWa3mitxx_eJup_No0hw.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p>依照不同的 bias 和 weight 套入 model ，計算為 Loss 後，會得到一個等高線圖，紅色代表 L 值越高，藍色表示 Ｌ值越低，此等高線圖稱為 Error Surface。</p>
 <figure>
-<img src="https://miro.medium.com/max/60/1*tbLNAqYccsn7nphOB8R-rQ.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
 <img src="https://miro.medium.com/max/1400/1*tbLNAqYccsn7nphOB8R-rQ.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p><strong>step3: optimization (最佳化)</strong></p>
 <p>找一個 weight 和 bias 使得 Loss 值最小，此堂課只會用到 <strong>Gradient Descent</strong>。</p>
-<figure>
-<img src="https://miro.medium.com/max/60/1*AMjsBW8X8TSJp67slwOU0Q.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
 <figure>
 <img src="https://miro.medium.com/max/752/1*AMjsBW8X8TSJp67slwOU0Q.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
@@ -407,17 +343,11 @@
 <li>(Randomly) Pick an initial value w0</li>
 </ul>
 <figure>
-<img src="https://miro.medium.com/max/60/1*ueRoRHx98Uz-1qkTM2MyVA.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
 <img src="https://miro.medium.com/max/752/1*ueRoRHx98Uz-1qkTM2MyVA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <ul>
 <li>計算 { w = w0 時，Ｌ對 w 的微分}是多少，也就是切線斜率是多少，為正，表示 w 值越來越高，為負，表示 w 值越來越低。</li>
 </ul>
-<figure>
-<img src="https://miro.medium.com/max/60/1*RRPtTXM-ECPzhhAt-2xJ9g.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
 <figure>
 <img src="https://miro.medium.com/max/748/1*RRPtTXM-ECPzhhAt-2xJ9g.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
@@ -427,13 +357,7 @@
 <li>w0 往切線斜率小的方向跨出一步之後得到 w1，w1 用數學方式表示就是</li>
 </ul>
 <figure>
-<img src="https://miro.medium.com/max/60/1*H55UrbtkfGi1jr6h8Y7hmA.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
 <img src="https://miro.medium.com/max/976/1*H55UrbtkfGi1jr6h8Y7hmA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
-<img src="https://miro.medium.com/max/60/1*mkvJ9sL904OROvBOIF-h9A.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <figure>
 <img src="https://miro.medium.com/max/1400/1*mkvJ9sL904OROvBOIF-h9A.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
@@ -442,16 +366,12 @@
 <li>如此反覆 update w 的值，在兩種情況會停下來，一為斜率為 0 時，二為失去耐心時？但找到的 minima 可能為 local minima，不為 global minima (此時老師提醒，這只是教科書上的說法，真正遇到的難題不為此)</li>
 </ul>
 <figure>
-<img src="https://miro.medium.com/max/60/1*QotY1eL-a4wM4Junxjs9nQ.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
 <img src="https://miro.medium.com/max/1400/1*QotY1eL-a4wM4Junxjs9nQ.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
-<p>\2. 計算 b 最小值，利用上述方法。</p>
-<p>\3. 最後找到 w minima 為 0.97, b minima 為 0.1k，帶入 L 後為 0.48k</p>
-<figure>
-<img src="https://miro.medium.com/max/60/1*4SWpfI74TOd286xRfYiD3Q.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
+<ol start="2" type="1">
+<li><p>計算 b 最小值，利用上述方法。</p></li>
+<li><p>最後找到 w minima 為 0.97, b minima 為 0.1k，帶入 L 後為 0.48k</p></li>
+</ol>
 <figure>
 <img src="https://miro.medium.com/max/1400/1*4SWpfI74TOd286xRfYiD3Q.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
@@ -463,113 +383,68 @@
 </figure>
 <p>依序考慮 7. 28. 56 天數，可以發現 Ｌ 值降低了。</p>
 <figure>
-<img src="https://miro.medium.com/max/60/1*-wBE8v3eilqwR3bwZpqmpQ.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
 <img src="https://miro.medium.com/max/1400/1*-wBE8v3eilqwR3bwZpqmpQ.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
-<p>但是在不同的數值範圍，可能會有不同的 linear model，是因為有 model bias ，如下圖紅色線。</p>
-<figure>
-<img src="https://miro.medium.com/max/60/1*BNkxLT-HXbTTtW3C9sOO1g.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p>但是在不同的數值範圍，可能會有不同的 linear model，是因為有 model bias，也就是 function 的彈性不夠 ，如下圖紅色線。</p>
+<p>而一個 linear function 不可能表示 non-linear function</p>
 <figure>
 <img src="https://miro.medium.com/max/1400/1*BNkxLT-HXbTTtW3C9sOO1g.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p>red line 可以看作是 constant + blue line 的總和，若 red line 轉折點越多，則需要的 blue line 越多。</p>
-<figure>
-<img src="https://miro.medium.com/max/60/1*L-qVYtZGUsbQjprBdDdYqA.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p>也就是 red curve = constant + sum of a set of hard sigmoid function</p>
 <figure>
 <img src="https://miro.medium.com/max/1400/1*L-qVYtZGUsbQjprBdDdYqA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p>若 red line 是曲線，可以用取很多的點來逼近它。</p>
-<figure>
-<img src="https://miro.medium.com/max/60/1*iVdadzh3jt7T6lQP3JtApQ.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p>任何一個 continuous curve 可以用很多個 piecewise linear curve 來逼近。</p>
 <figure>
 <img src="https://miro.medium.com/max/1400/1*iVdadzh3jt7T6lQP3JtApQ.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <h2 id="如何描繪上述的-blue-line-呢">如何描繪上述的 blue line 呢？</h2>
 <p>可以使用 sigmoid function 來逼近，中文為 S 型的 function，上圖 blue line 有菱有角的，通常稱為 hard sigmoid function。</p>
 <figure>
-<img src="https://miro.medium.com/max/60/1*7N1t6VKdVqQHzjfv6J6J7A.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
 <img src="https://miro.medium.com/max/1400/1*7N1t6VKdVqQHzjfv6J6J7A.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p>可以用不同的 c. w. b，來調整 sigmoid function。</p>
-<figure>
-<img src="https://miro.medium.com/max/60/0*6YX6c062sRJHXUmQ.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
 <figure>
 <img src="https://miro.medium.com/max/1400/0*6YX6c062sRJHXUmQ.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p>因為 red line 是由多個不同的 blue line 所組成，可以寫為下圖的函式。</p>
 <figure>
-<img src="https://miro.medium.com/max/60/1*4j01KDXI1E46aOvS1kzEfA.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
 <img src="https://miro.medium.com/max/1400/1*4j01KDXI1E46aOvS1kzEfA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
-<img src="https://miro.medium.com/max/60/1*60WNxHxux4qIhamh6r_0tA.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <figure>
 <img src="https://miro.medium.com/max/1400/1*60WNxHxux4qIhamh6r_0tA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p>上述 function是考慮一天的情況，同理考慮更多天數可以寫為下列 function：</p>
 <figure>
-<img src="https://miro.medium.com/max/60/1*1Kx04jkNC0b2zIoY0CJWsQ.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
 <img src="https://miro.medium.com/max/1400/1*1Kx04jkNC0b2zIoY0CJWsQ.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
-<p>再舉一個例子，i 為不同的 sigmoid，j 為不同的 feature，Wij 表示第 i 個 sigmoid 乘給第 j 個 feature，為方便起見，可以將籃框處簡化為 r1. r2. r3。</p>
-<figure>
-<img src="https://miro.medium.com/max/60/1*D55FvLQozT9vGRxdPgAJRA.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p>再舉一個例子，i 為不同的 sigmoid，j 為不同的 feature，Wij 表示第 i 個 sigmoid 乘給第 j 個 feature，為方便起見，可以將藍框處簡化為 r1. r2. r3。</p>
 <figure>
 <img src="https://miro.medium.com/max/1400/1*D55FvLQozT9vGRxdPgAJRA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p>籃筐處用可以用矩陣的方式來表示，如下</p>
 <figure>
-<img src="https://miro.medium.com/max/60/1*5kjZ9BgQunYREUbmMSMiNQ.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
 <img src="https://miro.medium.com/max/1400/1*5kjZ9BgQunYREUbmMSMiNQ.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p>現在將 r 加入 sigmoid function</p>
-<figure>
-<img src="https://miro.medium.com/max/60/1*pyHa-sTlt3mywNEirTa_6Q.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
 <figure>
 <img src="https://miro.medium.com/max/1400/1*pyHa-sTlt3mywNEirTa_6Q.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p>sigmoid function 也可以簡化為 a</p>
 <figure>
-<img src="https://miro.medium.com/max/60/1*eWwqyhGsbjGwci-a1BGMbw.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
 <img src="https://miro.medium.com/max/712/1*eWwqyhGsbjGwci-a1BGMbw.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p>接下來完成函式 y</p>
-<figure>
-<img src="https://miro.medium.com/max/60/1*CEut5H24owChbV5qcFYV9A.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
 <figure>
 <img src="https://miro.medium.com/max/1400/1*CEut5H24owChbV5qcFYV9A.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p>用向量表示即為下</p>
 <figure>
-<img src="https://miro.medium.com/max/60/1*uqVuf6JOvVsZGjRPXd5ySA.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
 <img src="https://miro.medium.com/max/1100/1*uqVuf6JOvVsZGjRPXd5ySA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p>整理一下</p>
-<figure>
-<img src="https://miro.medium.com/max/60/1*ojtIWkKbomL5175Q-UpDYA.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
 <figure>
 <img src="https://miro.medium.com/max/1400/1*ojtIWkKbomL5175Q-UpDYA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
@@ -579,20 +454,11 @@
 </figure>
 <p>在函式中，所有 unknown parameter 可以統稱為 <strong>θ</strong></p>
 <figure>
-<img src="https://miro.medium.com/max/60/1*sqlCAKmx-W4DqHE4qbcfPQ.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
 <img src="https://miro.medium.com/max/1400/1*sqlCAKmx-W4DqHE4qbcfPQ.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p>y 就是在寫 function with unknown parameter，unknown parameter 就是在指 <strong>θ</strong>/thita/</p>
 <figure>
-<img src="https://miro.medium.com/max/60/1*a0zzCR5PHDGdobl1vpajCw.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
 <img src="https://miro.medium.com/max/1400/1*a0zzCR5PHDGdobl1vpajCw.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
-<img src="https://miro.medium.com/max/60/1*GUSK_9UPJBoa4007kEwQsQ.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <figure>
 <img src="https://miro.medium.com/max/1400/1*GUSK_9UPJBoa4007kEwQsQ.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
@@ -605,39 +471,30 @@
 </figure>
 <p>最佳化 new model，尋找可以使 L 最小的 unknown parameter， <strong>θ</strong></p>
 <figure>
-<img src="https://miro.medium.com/max/60/1*SJ__7imfD2pXRsfYZK2VwA.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
 <img src="https://miro.medium.com/max/752/1*SJ__7imfD2pXRsfYZK2VwA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p>先隨機挑選一組 θ，當 θ＝θ1 時，對 Ｌ做 θ 微分時，值為多少，也就是梯度為多少，通常簡寫為 g，表示 gradient，有時也會用 <strong>∇</strong> /nabla/來表示 gradient。</p>
-<figure>
-<img src="https://miro.medium.com/max/60/1*nCPuUSQ0PKgtVgKxokBVEA.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
 <figure>
 <img src="https://miro.medium.com/max/716/1*nCPuUSQ0PKgtVgKxokBVEA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p>初始值 θ0，減掉 ∇ (g, gradient) 在乘以 η (learning rate)，就會得到 θ1</p>
 <figure>
-<img src="https://miro.medium.com/max/60/1*iMX4q8V4BJ0O0UImavhzyw.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
 <img src="https://miro.medium.com/max/680/1*iMX4q8V4BJ0O0UImavhzyw.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p>function 如下：</p>
-<figure>
-<img src="https://miro.medium.com/max/60/1*hDtVpfaLurbgZvCw_wnJ2A.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
 <figure>
 <img src="https://miro.medium.com/max/1400/1*hDtVpfaLurbgZvCw_wnJ2A.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p>但在實做上，不會將所有資料一起算，會先把資料做分組做計算，每一組為一個 batch，將所有 batch 看過一次稱為 epoch，所以做了一次 epoch 的訓練，其實是不知道更新了多少次參數，因為是取決於 batch size 有多大，另外每次更新資料稱為 update。</p>
 <figure>
-<img src="https://miro.medium.com/max/60/1*IiG8MwHuPoEDSlqx65gATA.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
 <img src="https://miro.medium.com/max/1400/1*IiG8MwHuPoEDSlqx65gATA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
+<h2 id="hyperparameters-有哪些">hyperparameters 有哪些？</h2>
+<ol type="1">
+<li><span class="math inline">\(\eta\)</span>, learning rate</li>
+<li>activate function(sigmoid function)</li>
+<li>神經網路的深度</li>
+</ol>
 <h2 id="可不可以不要用-sigmoid-使用-hard-sigmoid-做取代">可不可以不要用 sigmoid ，使用 hard sigmoid 做取代？</h2>
 <p>可以使用兩個 ReLU(Rectified Linear Unit) 合成一個 hard sigmoid ，來取代 sigmoid</p>
 <figure>
@@ -645,39 +502,24 @@
 </figure>
 <p>就會變成</p>
 <figure>
-<img src="https://miro.medium.com/max/60/1*I6nhiZVC9c6ov9sURxl55A.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
 <img src="https://miro.medium.com/max/1400/1*I6nhiZVC9c6ov9sURxl55A.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p>不管 sigmoid 或 ReLU 皆稱為 activation function</p>
-<figure>
-<img src="https://miro.medium.com/max/60/1*Y11V1mUw2ydgGKFxRkLIpw.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
 <figure>
 <img src="https://miro.medium.com/max/1400/1*Y11V1mUw2ydgGKFxRkLIpw.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p>來看一下真實狀況，發現預測未來，可能增加 ReLU，也就是畫出更複雜的曲線（更多折現的 picewise linear function），但 L 卻不能降低。</p>
 <figure>
-<img src="https://miro.medium.com/max/60/1*x8RRUzJDs0rhcTpeyRPAQg.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
 <img src="https://miro.medium.com/max/1400/1*x8RRUzJDs0rhcTpeyRPAQg.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p>利用不同的 unknown parameter 來做計算 Ｌ(L for multiple hidden layer)，可以發現可以降低 Ｌ。</p>
 <figure>
-<img src="https://miro.medium.com/max/60/1*15fimLFw59DWkj6yoTXJQw.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
 <img src="https://miro.medium.com/max/1400/1*15fimLFw59DWkj6yoTXJQw.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
-<img src="https://miro.medium.com/max/60/1*Cqb9iLtOlVuBJHT7uCWn5Q.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
 <figure>
 <img src="https://miro.medium.com/max/1400/1*Cqb9iLtOlVuBJHT7uCWn5Q.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
 </figure>
-<h2 id="缺少一個-fancy-name">缺少一個 fancy name?!</h2>
+<h2 id="缺少一個-fancy-name">缺少一個 fancy name?</h2>
 <p>在80. 90 年代稱為 neuron ，通過多層計算稱為 neural network，但名稱被搞臭了(期待過高，實際成果卻沒有達到)，現在稱為 <strong>hidden layer</strong>，經過多層計算稱為 deep，這整套技術稱為 <strong>deep leaning</strong>。</p>
 <figure>
 <img src="https://miro.medium.com/max/1400/1*X4jbTuR7QFedvQG8llCMDw.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
