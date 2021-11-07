@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>深度學習基本概念簡介_李弘毅_ML2021#1 | 一張地圖</title>
+  <meta name="description" content="什麼是機器學習呢？ 讓機器具備找一個函式的能力。 例如:  【輸入是一段聲音，輸出是這段聲音的文字】的這一個函式，這個函式顯然非常複雜，沒有辦法使用人類手寫的方式找尋出來，而我們期待機器自動地將此函式找出來。 【輸入是一張圖片，輸出是描述這張圖片的內容】 讓機器下圍棋，【輸入是一張圍棋的現況，輸出是圍棋的下一步】  機器學習的類別  1. Regression: the function outp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深度學習基本概念簡介_李弘毅_ML2021#1">
+<meta property="og:url" content="https://promaxj.github.io/2021/11/07/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%B0%A1%E4%BB%8B-%E6%9D%8E%E5%BC%98%E6%AF%85-ML2021-1/index.html">
+<meta property="og:site_name" content="一張地圖">
+<meta property="og:description" content="什麼是機器學習呢？ 讓機器具備找一個函式的能力。 例如:  【輸入是一段聲音，輸出是這段聲音的文字】的這一個函式，這個函式顯然非常複雜，沒有辦法使用人類手寫的方式找尋出來，而我們期待機器自動地將此函式找出來。 【輸入是一張圖片，輸出是描述這張圖片的內容】 讓機器下圍棋，【輸入是一張圍棋的現況，輸出是圍棋的下一步】  機器學習的類別  1. Regression: the function outp">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://miro.medium.com/max/1202/0*QVR04FZJV4Vzt0du.png">
+<meta property="og:image" content="https://miro.medium.com/max/1226/0*bAmBN9JTB8mS0c_W.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*QRO4uerAryyu5I8MtCfOzQ.png">
+<meta property="og:image" content="https://miro.medium.com/max/464/1*6DlnRk7qqPmx9FopOdDllw.png">
+<meta property="og:image" content="https://miro.medium.com/max/316/1*aDH49OKi1w_QrGZCEzayGQ.png">
+<meta property="og:image" content="https://miro.medium.com/max/868/1*-jfY9qGtAVPvKAKbfYpfCA.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*PTogaOZswNhPUlApGX7LVA.png">
+<meta property="og:image" content="https://miro.medium.com/max/884/1*MojrNc0gQCVTgIGxA9s6Vg.png">
+<meta property="og:image" content="https://miro.medium.com/max/524/1*EQmWa3mitxx_eJup_No0hw.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*tbLNAqYccsn7nphOB8R-rQ.png">
+<meta property="og:image" content="https://miro.medium.com/max/752/1*AMjsBW8X8TSJp67slwOU0Q.png">
+<meta property="og:image" content="https://miro.medium.com/max/752/1*ueRoRHx98Uz-1qkTM2MyVA.png">
+<meta property="og:image" content="https://miro.medium.com/max/748/1*RRPtTXM-ECPzhhAt-2xJ9g.png">
+<meta property="og:image" content="https://miro.medium.com/max/976/1*H55UrbtkfGi1jr6h8Y7hmA.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*mkvJ9sL904OROvBOIF-h9A.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*QotY1eL-a4wM4Junxjs9nQ.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*4SWpfI74TOd286xRfYiD3Q.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*rnUBpfdH_w-5UJN_kTxLhA.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*-wBE8v3eilqwR3bwZpqmpQ.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*BNkxLT-HXbTTtW3C9sOO1g.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*L-qVYtZGUsbQjprBdDdYqA.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*iVdadzh3jt7T6lQP3JtApQ.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*7N1t6VKdVqQHzjfv6J6J7A.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/0*6YX6c062sRJHXUmQ.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*4j01KDXI1E46aOvS1kzEfA.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*60WNxHxux4qIhamh6r_0tA.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*1Kx04jkNC0b2zIoY0CJWsQ.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*D55FvLQozT9vGRxdPgAJRA.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*5kjZ9BgQunYREUbmMSMiNQ.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*pyHa-sTlt3mywNEirTa_6Q.png">
+<meta property="og:image" content="https://miro.medium.com/max/712/1*eWwqyhGsbjGwci-a1BGMbw.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*CEut5H24owChbV5qcFYV9A.png">
+<meta property="og:image" content="https://miro.medium.com/max/1100/1*uqVuf6JOvVsZGjRPXd5ySA.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*ojtIWkKbomL5175Q-UpDYA.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*d68KcDB4F_MXBfgFos3kpw.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*sqlCAKmx-W4DqHE4qbcfPQ.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*a0zzCR5PHDGdobl1vpajCw.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*GUSK_9UPJBoa4007kEwQsQ.png">
+<meta property="og:image" content="https://miro.medium.com/max/60/1*U68Uh5IymBc5dq0MFViHuQ.png?q=20">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*U68Uh5IymBc5dq0MFViHuQ.png">
+<meta property="og:image" content="https://miro.medium.com/max/752/1*SJ__7imfD2pXRsfYZK2VwA.png">
+<meta property="og:image" content="https://miro.medium.com/max/716/1*nCPuUSQ0PKgtVgKxokBVEA.png">
+<meta property="og:image" content="https://miro.medium.com/max/680/1*iMX4q8V4BJ0O0UImavhzyw.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*hDtVpfaLurbgZvCw_wnJ2A.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*IiG8MwHuPoEDSlqx65gATA.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*uDwFpc_XvJq0kOOFrriWxQ.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*I6nhiZVC9c6ov9sURxl55A.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*Y11V1mUw2ydgGKFxRkLIpw.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*x8RRUzJDs0rhcTpeyRPAQg.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*15fimLFw59DWkj6yoTXJQw.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*Cqb9iLtOlVuBJHT7uCWn5Q.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*X4jbTuR7QFedvQG8llCMDw.png">
+<meta property="og:image" content="https://miro.medium.com/max/1340/1*MNWWewUZJ29NOp4OijIixQ.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*19jAQaLVdAtHmttXVL5L7w.png">
+<meta property="og:image" content="https://miro.medium.com/max/1400/1*uc0Y4IGbOC8_Xjsam4uieA.png">
+<meta property="article:published_time" content="2021-11-07T04:49:21.000Z">
+<meta property="article:modified_time" content="2021-11-07T07:11:32.630Z">
+<meta property="article:author" content="Zelig">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://miro.medium.com/max/1202/0*QVR04FZJV4Vzt0du.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://promaxj.github.io/2021/11/07/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%B0%A1%E4%BB%8B-%E6%9D%8E%E5%BC%98%E6%AF%85-ML2021-1/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="一張地圖" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    <link href="//cdn.jsdelivr.net/npm/katex@0.9.0/dist/katex.min.css" rel="stylesheet">
+  
+  
+  
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/promaxj" target="_blank">
+          <img class="img-circle img-rotate" src="/images/t.jpeg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">Zelig</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">Engineer</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> Taipei, Taiwan</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/uncategorized/">uncategorized</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/">機器學習</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+
+    
+  </div>
+</aside>
+
+  
+  
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <nav id="toc" class="article-toc">
+      <h3 class="toc-title">Catalogue</h3>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E5%91%A2"><span class="toc-number">1.</span> <span class="toc-text">什麼是機器學習呢？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E7%9A%84%E9%A1%9E%E5%88%A5"><span class="toc-number">2.</span> <span class="toc-text">機器學習的類別</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92%E5%A6%82%E4%BD%95%E5%8E%BB%E5%B0%8B%E6%89%BE%E4%B8%80%E5%80%8B%E5%87%BD%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">機器學習如何去尋找一個函式？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%99%E6%98%AF%E6%9C%80%E5%A5%BD%E7%9A%84%E8%A8%88%E7%AE%97%E6%96%B9%E5%BC%8F%E5%97%8E%E6%88%96%E5%8F%AA%E6%98%AF%E8%87%AA%E5%97%A8"><span class="toc-number"></span> <span class="toc-text">這是最好的計算方式嗎？或只是自嗨？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%8F%8F%E7%B9%AA%E4%B8%8A%E8%BF%B0%E7%9A%84-blue-line-%E5%91%A2"><span class="toc-number">1.</span> <span class="toc-text">如何描繪上述的 blue line 呢？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8F%BE%E5%9C%A8%E5%86%8D%E9%87%8D%E6%96%B0%E8%AA%AA%E6%98%8E%E4%B8%80%E6%AC%A1%E5%A6%82%E4%BD%95%E5%B0%8B%E6%89%BE-funciton"><span class="toc-number">2.</span> <span class="toc-text">現在再重新說明一次如何尋找 funciton</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hyperparameters-%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-number">3.</span> <span class="toc-text">hyperparameters 有哪些？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E4%B8%8D%E5%8F%AF%E4%BB%A5%E4%B8%8D%E8%A6%81%E7%94%A8-sigmoid-%E4%BD%BF%E7%94%A8-hard-sigmoid-%E5%81%9A%E5%8F%96%E4%BB%A3"><span class="toc-number">4.</span> <span class="toc-text">可不可以不要用 sigmoid ，使用 hard sigmoid 做取代？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%BA%E5%B0%91%E4%B8%80%E5%80%8B-fancy-name"><span class="toc-number">5.</span> <span class="toc-text">缺少一個 fancy name?</span></a></li></ol>
+    </nav>
+  </div>
+</aside>
+
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-深度學習基本概念簡介-李弘毅-ML2021-1" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      深度學習基本概念簡介_李弘毅_ML2021#1
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2021/11/07/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%B0%A1%E4%BB%8B-%E6%9D%8E%E5%BC%98%E6%AF%85-ML2021-1/" class="article-date">
+	  <time datetime="2021-11-07T04:49:21.000Z" itemprop="datePublished">2021-11-07</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92/">機器學習</a>
+  </span>
+
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/11/07/%E6%B7%B1%E5%BA%A6%E5%AD%B8%E7%BF%92%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E7%B0%A1%E4%BB%8B-%E6%9D%8E%E5%BC%98%E6%AF%85-ML2021-1/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h2 id="什麼是機器學習呢">什麼是機器學習呢？</h2>
+<p>讓機器具備找一個函式的能力。</p>
+<p>例如:</p>
+<ul>
+<li>【輸入是一段聲音，輸出是這段聲音的文字】的這一個函式，這個函式顯然非常複雜，沒有辦法使用人類手寫的方式找尋出來，而我們期待機器自動地將此函式找出來。</li>
+<li>【輸入是一張圖片，輸出是描述這張圖片的內容】</li>
+<li>讓機器下圍棋，【輸入是一張圍棋的現況，輸出是圍棋的下一步】</li>
+</ul>
+<h2 id="機器學習的類別">機器學習的類別</h2>
+<ul>
+<li><strong>1. Regression</strong>: the function output is a scalar(數值).例如預測未來的 PM2.5 的濃度</li>
+</ul>
+<figure>
+<img src="https://miro.medium.com/max/1202/0*QVR04FZJV4Vzt0du.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<ul>
+<li><strong>2. Classification</strong>: given options(classes), the function output the correct one.例如篩選垃圾郵件、Alfa Go 下圍棋</li>
+</ul>
+<figure>
+<img src="https://miro.medium.com/max/1226/0*bAmBN9JTB8mS0c_W.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<ul>
+<li><strong>3. Structured learning</strong>: create something with structure.(例如一篇文章、一張圖片)</li>
+</ul>
+<h2 id="機器學習如何去尋找一個函式">機器學習如何去尋找一個函式？</h2>
+<p>可以分為三步驟，第一步寫出未知參數的函式，利用 domain knowledge 猜測有哪些因素會影響預測，第二步計算預側與實際物差的 loss function，第三部優化未知函式的參數，此三步驟可稱為 training</p>
+<p>例如去尋找預測 YT 的流量（觀看人數），現有的資料為 YT 的後台，但不知道此函式需要多少參數</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*QRO4uerAryyu5I8MtCfOzQ.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p><strong>step1: write a function with unknown parameters</strong></p>
+<p>也就是去猜測這個未知參數應該長什麼樣子</p>
+<p>例如：</p>
+<p><span class="math display">\[y = b + wx_1\]</span></p>
+<figure>
+<img src="https://miro.medium.com/max/464/1*6DlnRk7qqPmx9FopOdDllw.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>帶有未知 parameter 的 function 又稱為 <strong>model</strong>，上圖的 model 是一種 linear model</p>
+<p>y: 需要去預測的觀看人數。</p>
+<p>x1: 也許是預測是昨日的觀看人數，是基於什麼東西去預測，因為我們已經知道這個值是多少，所以又稱為 <strong>feature</strong>。</p>
+<ol start="2" type="a">
+<li>w: 為 unknown parameter，是透過 <strong>domain knowledge</strong> 去猜測，後續透過資料去把東西給找出來，因為 w 是和 x1 去做相乘，稱之為 <strong>weight</strong>，b 沒有和 x1 相乘直接加上去的，稱之為 <strong>bias</strong>。</li>
+</ol>
+<p><strong>step2: define loss from training data</strong></p>
+<p>一個 function，輸入是剛剛定義的 model 的 unknown parameter，輸出是將 unknown parameter 帶入此 function 後，這筆數值是好或不好，此稱為 loss function。</p>
+<p>例如：</p>
+<p><span class="math display">\[L(b, w)\]</span></p>
+<figure>
+<img src="https://miro.medium.com/max/316/1*aDH49OKi1w_QrGZCEzayGQ.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>這樣說可能有點抽象，所以假設 b=0.5k; w = 0.1</p>
+<p><span class="math display">\[L(b, w)\]</span></p>
+<p><span class="math display">\[b= o.5k, w=0.1\]</span></p>
+<p><span class="math display">\[y=0.5k+0.1x_1\]</span></p>
+<figure>
+<img src="https://miro.medium.com/max/868/1*-jfY9qGtAVPvKAKbfYpfCA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>b=0.5k; w = 0.1，這樣所代表的函式有多少呢？就是 training data</p>
+<p>例如此 training data 就是過往的觀看次數</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*PTogaOZswNhPUlApGX7LVA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>1/2 的觀看次數是 4.9k，b=0.5k; w = 0.1時，預測 1/3 觀看次數為 5.4k，實際觀看次數為 7.5k，兩者有誤差。</p>
+<p>每一天的誤差平均為 Ｌ，也就是 Loss</p>
+<p>Ｌ (Loss) 有不同的計算方式</p>
+<ul>
+<li>利用絕對值差異的，稱為 mean absolute error (<strong>MAE</strong>)</li>
+<li>利用相差平方的，稱為 mean square error(<strong>MSE</strong>)</li>
+<li>如果計算的數值為機率分佈時，會使用 <strong>cross-entropy</strong></li>
+</ul>
+<p>因為 L 是自己定義的，也可能為負數，但上述舉例不可能為負。</p>
+<figure>
+<img src="https://miro.medium.com/max/884/1*MojrNc0gQCVTgIGxA9s6Vg.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img src="https://miro.medium.com/max/524/1*EQmWa3mitxx_eJup_No0hw.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>依照不同的 bias 和 weight 套入 model ，計算為 Loss 後，會得到一個等高線圖，紅色代表 L 值越高，藍色表示 Ｌ值越低，此等高線圖稱為 Error Surface。</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*tbLNAqYccsn7nphOB8R-rQ.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p><strong>step3: optimization (最佳化)</strong></p>
+<p>找一個 weight 和 bias 使得 Loss 值最小，此堂課只會用到 <strong>Gradient Descent</strong>。</p>
+<figure>
+<img src="https://miro.medium.com/max/752/1*AMjsBW8X8TSJp67slwOU0Q.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p><strong>Gradient Descent</strong></p>
+<ol type="1">
+<li>計算 w 最小值</li>
+</ol>
+<ul>
+<li>(Randomly) Pick an initial value w0</li>
+</ul>
+<figure>
+<img src="https://miro.medium.com/max/752/1*ueRoRHx98Uz-1qkTM2MyVA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<ul>
+<li>計算 { w = w0 時，Ｌ對 w 的微分}是多少，也就是切線斜率是多少，為正，表示 w 值越來越高，為負，表示 w 值越來越低。</li>
+</ul>
+<figure>
+<img src="https://miro.medium.com/max/748/1*RRPtTXM-ECPzhhAt-2xJ9g.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<ul>
+<li>計算切線斜率，哪邊比較低，就往低的方向跨出一步，步伐大小取決於兩個因素，一為斜率，二為 η /eta/(learning rate)，若斜率越大，跨出步伐越大，斜率越小，跨出步伐越小，</li>
+<li>η 是自己設定的，若設定越大，每次 update 的數值越大，學習速度就會越快，若越小則相反，而這種機器學習中需要自己設定的東西稱之為 <strong>hyperparameters</strong>。</li>
+<li>w0 往切線斜率小的方向跨出一步之後得到 w1，w1 用數學方式表示就是</li>
+</ul>
+<figure>
+<img src="https://miro.medium.com/max/976/1*H55UrbtkfGi1jr6h8Y7hmA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*mkvJ9sL904OROvBOIF-h9A.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<ul>
+<li>如此反覆 update w 的值，在兩種情況會停下來，一為斜率為 0 時，二為失去耐心時？但找到的 minima 可能為 local minima，不為 global minima (此時老師提醒，這只是教科書上的說法，真正遇到的難題不為此)</li>
+</ul>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*QotY1eL-a4wM4Junxjs9nQ.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<ol start="2" type="1">
+<li><p>計算 b 最小值，利用上述方法。</p></li>
+<li><p>最後找到 w minima 為 0.97, b minima 為 0.1k，帶入 L 後為 0.48k</p></li>
+</ol>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*4SWpfI74TOd286xRfYiD3Q.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<h1 id="這是最好的計算方式嗎或只是自嗨">這是最好的計算方式嗎？或只是自嗨？</h1>
+<p>由於資料是對過去的資料進行訓練，可能無法預測未知的未來。</p>
+<p>在說明這之前，先觀察過去資料，可以發現過去資料大概有 7 日一循環的狀況。</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*rnUBpfdH_w-5UJN_kTxLhA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>依序考慮 7. 28. 56 天數，可以發現 Ｌ 值降低了。</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*-wBE8v3eilqwR3bwZpqmpQ.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>但是在不同的數值範圍，可能會有不同的 linear model，是因為有 model bias，也就是 function 的彈性不夠 ，如下圖紅色線。</p>
+<p>而一個 linear function 不可能表示 non-linear function</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*BNkxLT-HXbTTtW3C9sOO1g.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>red line 可以看作是 constant + blue line 的總和，若 red line 轉折點越多，則需要的 blue line 越多。</p>
+<p>也就是 red curve = constant + sum of a set of hard sigmoid function</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*L-qVYtZGUsbQjprBdDdYqA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>若 red line 是曲線，可以用取很多的點來逼近它。</p>
+<p>任何一個 continuous curve 可以用很多個 piecewise linear curve 來逼近。</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*iVdadzh3jt7T6lQP3JtApQ.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<h2 id="如何描繪上述的-blue-line-呢">如何描繪上述的 blue line 呢？</h2>
+<p>可以使用 sigmoid function 來逼近，中文為 S 型的 function，上圖 blue line 有菱有角的，通常稱為 hard sigmoid function。</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*7N1t6VKdVqQHzjfv6J6J7A.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>可以用不同的 c. w. b，來調整 sigmoid function。</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/0*6YX6c062sRJHXUmQ.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>因為 red line 是由多個不同的 blue line 所組成，可以寫為下圖的函式。</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*4j01KDXI1E46aOvS1kzEfA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*60WNxHxux4qIhamh6r_0tA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>上述 function是考慮一天的情況，同理考慮更多天數可以寫為下列 function：</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*1Kx04jkNC0b2zIoY0CJWsQ.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>再舉一個例子，i 為不同的 sigmoid，j 為不同的 feature，Wij 表示第 i 個 sigmoid 乘給第 j 個 feature，為方便起見，可以將藍框處簡化為 r1. r2. r3。</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*D55FvLQozT9vGRxdPgAJRA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>籃筐處用可以用矩陣的方式來表示，如下</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*5kjZ9BgQunYREUbmMSMiNQ.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>現在將 r 加入 sigmoid function</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*pyHa-sTlt3mywNEirTa_6Q.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>sigmoid function 也可以簡化為 a</p>
+<figure>
+<img src="https://miro.medium.com/max/712/1*eWwqyhGsbjGwci-a1BGMbw.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>接下來完成函式 y</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*CEut5H24owChbV5qcFYV9A.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>用向量表示即為下</p>
+<figure>
+<img src="https://miro.medium.com/max/1100/1*uqVuf6JOvVsZGjRPXd5ySA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>整理一下</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*ojtIWkKbomL5175Q-UpDYA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<h2 id="現在再重新說明一次如何尋找-funciton">現在再重新說明一次如何尋找 funciton</h2>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*d68KcDB4F_MXBfgFos3kpw.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>在函式中，所有 unknown parameter 可以統稱為 <strong>θ</strong></p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*sqlCAKmx-W4DqHE4qbcfPQ.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>y 就是在寫 function with unknown parameter，unknown parameter 就是在指 <strong>θ</strong>/thita/</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*a0zzCR5PHDGdobl1vpajCw.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*GUSK_9UPJBoa4007kEwQsQ.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img src="https://miro.medium.com/max/60/1*U68Uh5IymBc5dq0MFViHuQ.png?q=20" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*U68Uh5IymBc5dq0MFViHuQ.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>最佳化 new model，尋找可以使 L 最小的 unknown parameter， <strong>θ</strong></p>
+<figure>
+<img src="https://miro.medium.com/max/752/1*SJ__7imfD2pXRsfYZK2VwA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>先隨機挑選一組 θ，當 θ＝θ1 時，對 Ｌ做 θ 微分時，值為多少，也就是梯度為多少，通常簡寫為 g，表示 gradient，有時也會用 <strong>∇</strong> /nabla/來表示 gradient。</p>
+<figure>
+<img src="https://miro.medium.com/max/716/1*nCPuUSQ0PKgtVgKxokBVEA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>初始值 θ0，減掉 ∇ (g, gradient) 在乘以 η (learning rate)，就會得到 θ1</p>
+<figure>
+<img src="https://miro.medium.com/max/680/1*iMX4q8V4BJ0O0UImavhzyw.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>function 如下：</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*hDtVpfaLurbgZvCw_wnJ2A.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>但在實做上，不會將所有資料一起算，會先把資料做分組做計算，每一組為一個 batch，將所有 batch 看過一次稱為 epoch，所以做了一次 epoch 的訓練，其實是不知道更新了多少次參數，因為是取決於 batch size 有多大，另外每次更新資料稱為 update。</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*IiG8MwHuPoEDSlqx65gATA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<h2 id="hyperparameters-有哪些">hyperparameters 有哪些？</h2>
+<ol type="1">
+<li><span class="math inline">\(\eta\)</span>, learning rate</li>
+<li>activate function(sigmoid function)</li>
+<li>神經網路的深度</li>
+</ol>
+<h2 id="可不可以不要用-sigmoid-使用-hard-sigmoid-做取代">可不可以不要用 sigmoid ，使用 hard sigmoid 做取代？</h2>
+<p>可以使用兩個 ReLU(Rectified Linear Unit) 合成一個 hard sigmoid ，來取代 sigmoid</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*uDwFpc_XvJq0kOOFrriWxQ.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>就會變成</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*I6nhiZVC9c6ov9sURxl55A.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>不管 sigmoid 或 ReLU 皆稱為 activation function</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*Y11V1mUw2ydgGKFxRkLIpw.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>來看一下真實狀況，發現預測未來，可能增加 ReLU，也就是畫出更複雜的曲線（更多折現的 picewise linear function），但 L 卻不能降低。</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*x8RRUzJDs0rhcTpeyRPAQg.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>利用不同的 unknown parameter 來做計算 Ｌ(L for multiple hidden layer)，可以發現可以降低 Ｌ。</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*15fimLFw59DWkj6yoTXJQw.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*Cqb9iLtOlVuBJHT7uCWn5Q.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<h2 id="缺少一個-fancy-name">缺少一個 fancy name?</h2>
+<p>在80. 90 年代稱為 neuron ，通過多層計算稱為 neural network，但名稱被搞臭了(期待過高，實際成果卻沒有達到)，現在稱為 <strong>hidden layer</strong>，經過多層計算稱為 deep，這整套技術稱為 <strong>deep leaning</strong>。</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*X4jbTuR7QFedvQG8llCMDw.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img src="https://miro.medium.com/max/1340/1*MNWWewUZJ29NOp4OijIixQ.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>deep 也可以用多個 ReLU 來取代，為什麼要將計算變得更深，而不是變得更胖呢？</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*19jAQaLVdAtHmttXVL5L7w.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>為什麼不做得更深呢？</p>
+<p>會發生 overfitting，也就是資料在沒有看過的資料上的預測 L</p>
+<figure>
+<img src="https://miro.medium.com/max/1400/1*uc0Y4IGbOC8_Xjsam4uieA.png" alt="img" /><figcaption aria-hidden="true">img</figcaption>
+</figure>
+
+      
+    </div>
+    <div class="article-footer">
+      
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/promaxj" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/t.jpeg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/promaxj" target="_blank"><span class="text-dark">Zelig</span><small class="ml-1x">Engineer</small></a></h3>
+        <div></div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+    <section id="comments">
+        
+    </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2021/11/06/hello-world/" title="Hello World"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+    <li class="toggle-toc">
+      <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false" title="Catalogue" role="button">
+        <span>[&nbsp;</span><span>Catalogue</span>
+        <i class="text-collapsed icon icon-anchor"></i>
+        <i class="text-in icon icon-close"></i>
+        <span>]</span>
+      </a>
+    </li>
+    
+  </ul>
+  
+  
+  
+  <div class="bar-right">
+    
+  </div>
+  </div>
+</nav>
+  
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+    <div class="copyright">
+    	
+        <div class="publishby">
+        </div>
+    </div>
+</footer>
+
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+
+
+
+
+
+
+
+</body>
+</html>
