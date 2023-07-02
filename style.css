@@ -7,6 +7,21 @@ body {
     color: #333;
   }
   
+  .input-container {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+  }
+  
+  input {
+    width: 150px;
+    padding: 5px;
+  }
+  
   button {
     padding: 10px 20px;
     font-size: 18px;

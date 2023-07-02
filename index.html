@@ -6,16 +6,16 @@
 </head>
 <body>
   <h1>抽籤機</h1>
-  <div>
-    <label for="min">最小數字：</label>
-    <input type="number" id="min" value="1">
+  <div class="input-container">
+    <label for="min">最小值：</label>
+    <input type="number" id="min" min="0">
   </div>
-  <div>
-    <label for="max">最大數字：</label>
-    <input type="number" id="max" value="100">
+  <div class="input-container">
+    <label for="max">最大值：</label>
+    <input type="number" id="max" min="0">
   </div>
-  <div id="result"></div>
   <button onclick="drawLottery()">抽籤</button>
+  <div id="result"></div>
 
   <script src="script.js"></script>
 </body>
